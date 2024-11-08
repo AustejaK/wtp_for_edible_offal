@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 1: Istruzioni</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            <p align="justify">
+            Ti chiederemo di esprimere la tua opinione su {{rounds}} diversi tipi di prodotti secondari di macellazione.
+            <br><br>
+            <ol>
+                <li>Questa fase consisterà nel rispondere a <b>domande per {{rounds}} tipi diversi di prodotti secondari di macellazione</b>. </li>
+                <li>In ogni situazione, ti presenteremo un tipo di prodotto secondario di macellazione.  </li>
+                <li>Ti chiederemo di digitare il <b>prezzo massimo al kg</b> che pagheresti per questo tipo di prodotto. </li>
+                <li>Ti chiederemo di rispondere sulle <b>emozioni</b> che hai provato guardando le immagini.</li>
+                <li>Dopo aver risposto alle {{rounds}} situazioni, ti chiederemo di rispondere ad un <b>questionario finale</b> che ti chiederà alcune informazioni su di te.</li>
+            </ol>
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

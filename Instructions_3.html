@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 1: Istruzioni</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            <p align="justify">
+            Prima del compito reale, ti faremo fare un <b>giro di prova</b>.
+            <br><br>
+            Dopo il giro di prova, cominceranno le domande relative ad {{rounds}} diversi tipi di prodotti secondari di macellazione.
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

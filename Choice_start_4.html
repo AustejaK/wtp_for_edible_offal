@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 2: Dichiarazione della disponibilità a pagare e della ruota delle emozioni</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            <p align="justify">
+            La fascia di prezzo descritta dalla linea blu in basso è un intervallo approssimativo di prezzi per diversi tipi di prodotti secondari di macellazione.
+            <div style="text-align: center;">
+                <img class="img-fluid" src="{{ static image }}" style="width: 80%;" />
+            </div>
+            <p align="justify">Quando sei pronto/a di iniziare, clicca su “Avanti”.</p>
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 1: Istruzioni</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            <p align="justify">
+            <b>Importante</b>: per procedere con lo studio, in basso a destra dello schermo del computer
+            è presente un pulsante blu con la scritta "Avanti". Fai clic su di esso per passare alla pagina successiva.
+            <br><br>
+            Se non si vede un pulsante, significa che l'attività si sposterà automaticamente.
+            Questo succede durante i periodi di calibrazione dei sensori di attività elettrodermica.
+            Dopo ogni compito vedrai un <b>schermo bianco per {{C.eda_time}} secondi</b>. Questo è NORMALE. Lo studio procederà automaticamente.
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

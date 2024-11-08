@@ -1,0 +1,69 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 3: Questionario</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">15. Osserva attentamente questa immagine. Immagina che ti venga chiesto di consumare questo cibo. Indica quanto ritieni disgustoso questo alimento su una scala da 1 a 9 ( 1=per niente disgustoso, 9= estremamente disgustoso).
+            </p>
+            <table class="table">
+        <tbody>
+            <tr>
+                <td> </td>
+                <td align="center" class="align-middle">1 <br> per niente disgustoso</td>
+                <td align="center" class="align-middle">2</td>
+                <td align="center" class="align-middle">3</td>
+                <td align="center" class="align-middle">4</td>
+                <td align="center" class="align-middle">5</td>
+                <td align="center" class="align-middle">6</td>
+                <td align="center" class="align-middle">7</td>
+                <td align="center" class="align-middle">8</td>
+                <td align="center" class="align-middle">9 <br> totalmente disgustoso</td>
+            </tr>
+            <tr>
+                <td align="left"><img class="img-fluid" src="{{ static 'comfocus_madina/fds_1.png'}}" style="width: 70%;" /> </td>
+                {{ for field in form.food_disgust_sensitivity_1 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left"><img class="img-fluid" src="{{ static 'comfocus_madina/fds_2.png'}}" style="width: 70%;" /></td>
+                {{ for field in form.food_disgust_sensitivity_2 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left"><img class="img-fluid" src="{{ static 'comfocus_madina/fds_3.png'}}" style="width: 70%;" /></td>
+                {{ for field in form.food_disgust_sensitivity_3 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left"><img class="img-fluid" src="{{ static 'comfocus_madina/fds_4.png'}}" style="width: 70%;" /> </td>
+                {{ for field in form.food_disgust_sensitivity_4 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left"><img class="img-fluid" src="{{ static 'comfocus_madina/fds_5.png'}}" style="width: 70%;" /> </td>
+                {{ for field in form.food_disgust_sensitivity_5 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+
+        </tbody>
+    </table>
+        </div>
+        <div class="card-footer text-right" align="right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

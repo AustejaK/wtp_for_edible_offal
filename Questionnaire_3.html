@@ -1,0 +1,87 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 3: Questionario</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">14. Indica quanto trovi disgustosi i seguenti prodotti o situazioni su una scala da 1 a 9 (1 = per niente disgustoso, 9 = totalmente disgustoso)
+            </p>
+            <table class="table">
+        <tbody>
+            <tr>
+                <td> </td>
+                <td align="center" class="align-middle">1 <br> per niente disgustoso</td>
+                <td align="center" class="align-middle">2</td>
+                <td align="center" class="align-middle">3</td>
+                <td align="center" class="align-middle">4</td>
+                <td align="center" class="align-middle">5</td>
+                <td align="center" class="align-middle">6</td>
+                <td align="center" class="align-middle">7</td>
+                <td align="center" class="align-middle">8</td>
+                <td align="center" class="align-middle">9 <br> totalmente disgustoso</td>
+            </tr>
+            <tr>
+                <td align="left">1.	Mettere in bocca cartilagine animale </td>
+                {{ for field in form.general_disgust_1 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">2.	Mangiare con argenteria sporca in un ristorante </td>
+                {{ for field in form.general_disgust_2 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">3.	Cibo donato da un vicino che conosco a malapena </td>
+                {{ for field in form.general_disgust_3 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">4.	Mangiare formaggio a pasta dura a cui è stata tolta la muffa </td>
+                {{ for field in form.general_disgust_4 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">5.	Mangiare fette di mela che sono diventate marroni se esposte all'aria </td>
+                {{ for field in form.general_disgust_5 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">6.	La consistenza di alcuni tipi di pesce in bocca </td>
+                {{ for field in form.general_disgust_6 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">7.	Mangiare polpa di avocado di colore marrone  </td>
+                {{ for field in form.general_disgust_7 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">8.	C'è una piccola lumaca nell'insalata che volevo mangiare  </td>
+                {{ for field in form.general_disgust_8 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+
+        </tbody>
+    </table>
+        </div>
+        <div class="card-footer text-right" align="right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

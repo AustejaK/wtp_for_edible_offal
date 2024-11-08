@@ -1,0 +1,103 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 3: Questionario</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                17. Indica se ha mai avuto animali domestici in famiglia.
+            </p>
+            {{ form.animal_welfare}}
+        <p></p>
+        <p>18. Di seguito sono elencate alcune affermazioni. Indica, su una scala da 1 a 9 in che misura sei in disaccordo o in accordo con ciascuna affermazione. (1 = non sono affatto d’accordo; 9 = sono pienamente d'accordo).</p>
+        <table class="table">
+        <tbody>
+            <tr>
+                <td> </td>
+                <td align="center" class="align-middle">1 <br> non sono affatto d’accordo</td>
+                <td align="center" class="align-middle">2</td>
+                <td align="center" class="align-middle">3</td>
+                <td align="center" class="align-middle">4</td>
+                <td align="center" class="align-middle">5</td>
+                <td align="center" class="align-middle">6</td>
+                <td align="center" class="align-middle">7</td>
+                <td align="center" class="align-middle">8</td>
+                <td align="center" class="align-middle">9 <br> sono pienamente d'accordo</td>
+            </tr>
+            <tr>
+                <td align="left">1.	Assaggio continuamente cibi nuovi e diversi </td>
+                {{ for field in form.fns_1 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">2.	Non mi fido dei nuovi alimenti </td>
+                {{ for field in form.fns_2 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">3.	Se non so cosa contiene un cibo, non lo provo </td>
+                {{ for field in form.fns_3 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">4.	Il cibo etnico sembra troppo strano da mangiare </td>
+                {{ for field in form.fns_4 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">5.	Alle cene, provo un nuovo cibo </td>
+                {{ for field in form.fns_5 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">6.	Sono molto esigente riguardo ai cibi che mangio </td>
+                {{ for field in form.fns_6 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">7.	Ho paura di mangiare cose che non ho mai mangiato prima  </td>
+                {{ for field in form.fns_7 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">8.	Mangio quasi tutto  </td>
+                {{ for field in form.fns_8 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">9.	Mi piace il cibo di diversi Paesi  </td>
+                {{ for field in form.fns_9 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">10. Mi piace provare nuovi ristoranti etnici  </td>
+                {{ for field in form.fns_10 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+
+        </tbody>
+    </table>
+        </div>
+        <div class="card-footer text-right" align="right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

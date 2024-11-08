@@ -1,0 +1,130 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 3: Questionario</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">16. Di seguito sono elencate affermazioni sul rapporto tra l'uomo e l'ambiente. Indica, su una scala da 1 a 9 in che misura sei in disaccordo o in accordo con ciascuna affermazione. (1 = fortemente disaccordo; 9 = fortemente d’accordo).
+            </p>
+            <table class="table">
+        <tbody>
+            <tr>
+                <td> </td>
+                <td align="center" class="align-middle">1 <br> fortemente disaccordo</td>
+                <td align="center" class="align-middle">2</td>
+                <td align="center" class="align-middle">3</td>
+                <td align="center" class="align-middle">4</td>
+                <td align="center" class="align-middle">5</td>
+                <td align="center" class="align-middle">6</td>
+                <td align="center" class="align-middle">7</td>
+                <td align="center" class="align-middle">8</td>
+                <td align="center" class="align-middle">9 <br> fortemente d’accordo</td>
+            </tr>
+            <tr>
+                <td align="left">1.	Ci stiamo avvicinando al limite del numero di persone che la Terra può sostenere. </td>
+                {{ for field in form.nep_scale_1 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">2.	Gli esseri umani hanno il diritto di modificare l'ambiente naturale per adattarlo alle loro esigenze. </td>
+                {{ for field in form.nep_scale_2 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">3.	Quando l'uomo interferisce con la natura, spesso produce conseguenze disastrose.  </td>
+                {{ for field in form.nep_scale_3 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">4.	L'ingegno umano farà in modo di NON rendere la Terra invivibile. </td>
+                {{ for field in form.nep_scale_4 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">5.	Gli esseri umani stanno abusando gravemente dell'ambiente. </td>
+                {{ for field in form.nep_scale_5 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">6.	La Terra ha un'abbondanza di risorse naturali se solo imparassimo a svilupparle. </td>
+                {{ for field in form.nep_scale_6 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">7.	Le piante e gli animali hanno diritto di esistere tanto quanto gli esseri umani. </td>
+                {{ for field in form.nep_scale_7 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">8.	L'equilibrio della natura è abbastanza forte per far fronte agli impatti delle moderne nazioni industriali.  </td>
+                {{ for field in form.nep_scale_8 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">9.	Nonostante le nostre capacità speciali, gli esseri umani sono ancora soggetti alle leggi della natura.  </td>
+                {{ for field in form.nep_scale_9 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">10. La cosiddetta “crisi ecologica” che l'umanità si trova ad affrontare è stata notevolmente esagerata. </td>
+                {{ for field in form.nep_scale_10 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">11. La Terra è come un'astronave con spazio e risorse molto limitati.  </td>
+                {{ for field in form.nep_scale_11 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">12.	Gli esseri umani erano destinati a dominare il resto della natura.  </td>
+                {{ for field in form.nep_scale_12 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">13.	L'equilibrio della natura è molto delicato e si altera facilmente.  </td>
+                {{ for field in form.nep_scale_13 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">14.	Gli esseri umani alla fine impareranno abbastanza su come funziona la natura da poterla controllare.  </td>
+                {{ for field in form.nep_scale_14 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+            <tr>
+                <td align="left">15. Se le cose continuano sulla strada attuale, presto si verificherà una grave catastrofe ecologica.  </td>
+                {{ for field in form.nep_scale_15 }}
+                    <td scope="col" align="center">{{field}}</td>
+                {{ endfor }}
+            </tr>
+
+
+        </tbody>
+    </table>
+        </div>
+        <div class="card-footer text-right" align="right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,266 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+    .size-1 { width: 10px; height: 10px; }
+    .size-2 { width: 15px; height: 15px; }
+    .size-3 { width: 20px; height: 20px; }
+    .size-4 { width: 25px; height: 25px; }
+    .size-5 { width: 30px; height: 30px; }
+    .size-6 { width: 35px; height: 35px; }
+
+.page-header{
+    padding-top: 10px;
+    margin: 10px;
+    padding-bottom: 10px;
+}
+</style>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+<body class="bg-light">
+    <p class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Scelta 8</h5>
+        </div>
+
+        <div class="card-body">
+            <p class="card-text">
+            <h5 align="center">Quanto pagheresti al massimo per un kg di questo alimento?</h5>
+            <div style="text-align: center;">
+                <img class="img-fluid" src="{{ static image }}" style="width: 90%;" />
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <span style="display: inline-flex; align-items: center;">
+                    <input type="text" class="form-control" id="{{form_name}}" name="{{form_name}}" oninput="formatCurrency(this)">
+                    <span style="margin-left: 5px;">EUR</span>
+                </span>
+            </div>
+
+            <p></p>
+            Le nostre emozioni sono talvolta mescolate o combinate e possono contenere diversi componenti.
+                Valuta <b></b>l'intensità di quelle emozioni che hanno contribuito a ciò che hai provato</b>, anche se le intensità sono diverse. Se non hai provato alcuna emozione, seleziona 'Nessuna'. Se hai provato un'emozione molto diversa da quelle presenti, seleziona 'Altro'.  </p>
+            <div style="text-align: center; margin-top: 20px;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tbody>
+                <tr style="background-color: #f0f0f0;"><td>Rabbia</td>
+                    <td><input type="radio" name="rabbia_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="rabbia_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="rabbia_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="rabbia_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="rabbia_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="rabbia_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr><td>Interesse</td>
+                    <td><input type="radio" name="interesse_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="interesse_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="interesse_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="interesse_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="interesse_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="interesse_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr style="background-color: #f0f0f0;"><td>Divertimento</td>
+                    <td><input type="radio" name="divertimento_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="divertimento_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="divertimento_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="divertimento_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="divertimento_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="divertimento_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr><td>Orgoglio</td>
+                    <td><input type="radio" name="orgoglio_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="orgoglio_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="orgoglio_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="orgoglio_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="orgoglio_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="orgoglio_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr style="background-color: #f0f0f0;"><td>Gioia</td>
+                    <td><input type="radio" name="gioia_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="gioia_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="gioia_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="gioia_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="gioia_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="gioia_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr><td>Piacere</td>
+                    <td><input type="radio" name="piacere_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="piacere_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="piacere_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="piacere_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="piacere_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="piacere_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr style="background-color: #f0f0f0;"><td>Soddisfazione</td>
+                    <td><input type="radio" name="soddisfazione_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="soddisfazione_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="soddisfazione_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="soddisfazione_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="soddisfazione_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="soddisfazione_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr><td>Amore</td>
+                    <td><input type="radio" name="amore_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="amore_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="amore_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="amore_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="amore_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="amore_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr style="background-color: #f0f0f0;"><td>Ammirazione</td>
+                    <td><input type="radio" name="ammirazione_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="ammirazione_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="ammirazione_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="ammirazione_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="ammirazione_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="ammirazione_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr><td>Sollievo</td>
+                    <td><input type="radio" name="sollievo_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="sollievo_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="sollievo_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="sollievo_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="sollievo_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="sollievo_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr style="background-color: #f0f0f0;"><td>Compassione</td>
+                    <td><input type="radio" name="compassione_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="compassione_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="compassione_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="compassione_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="compassione_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="compassione_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr><td>Tristezza</td>
+                    <td><input type="radio" name="tristezza_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="tristezza_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="tristezza_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="tristezza_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="tristezza_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="tristezza_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr style="background-color: #f0f0f0;"><td>Colpevolezza</td>
+                    <td><input type="radio" name="colpevolezza_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="colpevolezza_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="colpevolezza_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="colpevolezza_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="colpevolezza_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="colpevolezza_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr><td>Rimpianto</td>
+                    <td><input type="radio" name="rimpianto_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="rimpianto_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="rimpianto_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="rimpianto_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="rimpianto_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="rimpianto_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr style="background-color: #f0f0f0;"><td>Vergogna</td>
+                    <td><input type="radio" name="vergogna_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="vergogna_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="vergogna_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="vergogna_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="vergogna_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="vergogna_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr><td>Disappunto</td>
+                    <td><input type="radio" name="disappunto_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="disappunto_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="disappunto_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="disappunto_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="disappunto_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="disappunto_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr style="background-color: #f0f0f0;"><td>Paura</td>
+                    <td><input type="radio" name="paura_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="paura_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="paura_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="paura_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="paura_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="paura_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr><td>Disgusto</td>
+                    <td><input type="radio" name="disgusto_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="disgusto_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="disgusto_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="disgusto_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="disgusto_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="disgusto_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr style="background-color: #f0f0f0;"><td>Disprezzo</td>
+                    <td><input type="radio" name="disprezzo_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="disprezzo_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="disprezzo_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="disprezzo_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="disprezzo_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="disprezzo_ch8" value="6" class="size-6"></td>
+                </tr>
+                <tr ><td>Odio</td>
+                    <td><input type="radio" name="odio_ch8" value="1" class="size-1"></td>
+                    <td><input type="radio" name="odio_ch8" value="2" class="size-2"></td>
+                    <td><input type="radio" name="odio_ch8" value="3" class="size-3"></td>
+                    <td><input type="radio" name="odio_ch8" value="4" class="size-4"></td>
+                    <td><input type="radio" name="odio_ch8" value="5" class="size-5"></td>
+                    <td><input type="radio" name="odio_ch8" value="6" class="size-6"></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <div class="container">
+            <form id="form">
+                <div class="row my-3">
+                    <div class="col-2">
+                        <button type="button" onclick="selectOption('nessuna_ch8')" class="btn btn-secondary btn-block option-button">Nessuna</button>
+                    </div>
+                    <div class="col-10">
+                        <!-- Add content here if needed, e.g., description or additional form elements -->
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-2">
+                        <button type="button" onclick="selectOption('altro_ch8')" class="btn btn-secondary btn-block option-button">Altro</button>
+                    </div>
+                    <div class="col-10">
+                        <!-- Add content here if needed, e.g., description or additional form elements -->
+                    </div>
+                </div>
+                <!-- Hidden inputs to hold button values -->
+                <input type="hidden" id="nessuna_ch8" name="nessuna_ch8" value="">
+                <input type="hidden" id="altro_ch8" name="altro_ch8" value="">
+            </form>
+        </div>
+    </div>
+
+<div class="card-footer text-right">
+         <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+          <span style="font-size:12pt">Avanti</span>
+     </button>
+</div>
+        </div>
+</body>
+
+<script>
+function formatCurrency(input) {
+    let value = input.value.replace(/[^0-9,]/g, '');
+    let formattedValue = parseFloat(value).toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function selectOption(optionId) {
+    document.getElementById('nessuna_ch8').value = "";
+    document.getElementById('altro_ch8').value = "";
+
+    document.getElementById(optionId).value = "1";
+
+    document.querySelectorAll('.option-button').forEach(btn => btn.classList.remove('btn-primary'));
+    document.querySelectorAll('.option-button').forEach(btn => btn.classList.add('btn-secondary'));
+
+    const button = document.querySelector(`button[onclick="selectOption('${optionId}')"]`);
+    button.classList.remove('btn-secondary');
+    button.classList.add('btn-primary');
+}
+</script>
+{% endblock %}

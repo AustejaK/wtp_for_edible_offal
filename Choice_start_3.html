@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 2: Dichiarazione della disponibilità a pagare e della ruota delle emozioni</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            <p align="justify">
+            Per favore, leggi le informazioni contenute nella tabella qui sotto. Quando sei pronto/a, clicca su “Avanti”.
+            <div style="text-align: center;">
+                <img class="img-fluid" src="{{ static image }}" style="width: 60%;" />
+            </div>
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

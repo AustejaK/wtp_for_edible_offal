@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.otree-timer {
+    display: none;
+}
+</style>
+
+<p align="center"> Osserva e leggi attentamente le seguenti immagini.</p>
+            <div style="text-align: center;">
+                {{ if player.treatment == 2 }}
+                <img class="img-fluid" src="{{ static 'comfocus_madina/treatment1.png' }}" style="width: 90%;" />
+                {{ else }}
+                <img class="img-fluid" src="{{ static 'comfocus_madina/treatment2.png' }}" style="width: 90%;" />
+                {{ endif }}
+            </div>
+
+
+
+</body>
+
+
+{% endblock %}
